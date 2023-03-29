@@ -14,6 +14,7 @@
     <nav>
         <a href="{{ route('post.list') }}">Главная</a>
         <a href="{{ route('post.create') }}">Новый пост</a>
+        <a href="{{ route('post.list.deleted') }}">Удаленные</a>
     </nav>
 
     <h1>@yield('title')</h1>

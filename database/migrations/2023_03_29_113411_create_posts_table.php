@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('translit')->unique();
             $table->text('anons');
             $table->text('text');
-            $table->integer('active')->default(1);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

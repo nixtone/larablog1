@@ -17,6 +17,10 @@ class PostController extends Controller
         $post = Post::where('translit', $translit)->get()->first();
         return view('post.item', compact('post'));
     }
+    public function listDeleted() {
+        $arPosts = Post::onlyTrashed()->get(); // withTrashed()
+        return view('post.list', compact('arPosts'));
+    }
 
     public function create() {
         return view('post.create');
@@ -40,5 +44,14 @@ class PostController extends Controller
     public function destroy(Post $post) {
         $post->delete();
         return redirect()->route('post.list');
+    }
+    public function destroyHard($post) {
+        //$post->forceDelete();
+        Post::where('id', $post)->forceDelete();
+        return redirect()->route('post.list.deleted');
+    }
+    public function restore($post) {
+        $post = Post::withTrashed()->find($post)->restore();
+        return redirect()->route('post.list.deleted');
     }
 }

@@ -3,6 +3,7 @@
 __Описание:__ образец блога с элементарной crud системой  
 
 [Ресурсные контроллеры](https://laravel.su/docs/8.x/controllers#resource-controllers)  
+[Мягкое удаление](https://laravel.su/docs/8.x/eloquent#deleting-models)  
 
 ## Коммиты  
 1. Модель, миграция, фабрика, сид  

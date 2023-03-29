@@ -17,7 +17,7 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-        $name = $this->faker->title();
+        $name = $this->faker->name(); // title() не годится
         return [
             'name' => $name,
             'translit' => Str::slug($name),

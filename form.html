@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Блог</title>
+<link rel="stylesheet" href="static/custom.css">
+</head>
+<body>
+
+<div class="container">
+
+	<nav>
+		<a href="">Главная</a>
+		<a href="">Новый пост</a>
+	</nav>
+
+	<h1>Новый пост</h1>
+
+	<div id="post">	
+		<form action="">
+            <div class="field_area">
+                <input type="text" name="name" class="field" placeholder="Заголовок">
+            </div>
+            <div class="field_area">
+                <input type="text" name="translit" class="field" placeholder="ЧПУ">
+            </div>
+            <div class="field_area">
+                <textarea name="anons" class="field" rows="7" placeholder="Анонс"></textarea>
+            </div>
+            <div class="field_area">
+                <textarea name="text" class="field" rows="15" placeholder="Текст статьи"></textarea>
+            </div>
+            <div class="field_area">
+                <label for="category_field">Категория</label>
+                <select name="category_id" id="category_field" class="field">
+                    <option value="">Плюшки оливковые</option>
+                </select>
+            </div>
+            <div class="field_area">
+                <label for="category_field">Теги</label>
+                <select name="category_id" id="category_field" class="field" multiple>
+                    <option value="">хроника</option>
+                    <option value="">полезное</option>
+                    <option value="">армия</option>
+                </select>
+            </div>
+            <div class="field_area">
+                <input type="checkbox" name="active" id="active_field" value="1" checked>
+                <label for="active_field" class="inline">Активность</label>
+            </div>
+            <div class="field_area">
+                <input type="hidden" name="user_id" value="1">
+                <input type="submit" value="Создать" class="btn">
+            </div>
+
+		</form>
+	</div>
+
+</div>
+
+</body>
+</html>

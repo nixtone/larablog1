@@ -18,5 +18,6 @@ Route::name('post.')->group(function() {
     Route::get('/post/create', [PostController::class, 'create'])->name('create');
     Route::post('/post', [PostController::class, 'store'])->name('store');
     Route::get('/post/{post}', [PostController::class, 'show'])->name('item');
-    Route::get('/photos/{post}/edit', function () { return view('post.edit'); })->name('edit');
+    Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('edit');
+    Route::patch('/post/{post}/update', [PostController::class, 'update'])->name('update');
 });

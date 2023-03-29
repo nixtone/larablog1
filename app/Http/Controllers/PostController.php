@@ -27,4 +27,13 @@ class PostController extends Controller
         $createdPost = Post::create($data);
         return redirect()->route('post.item', $createdPost->translit);
     }
+
+    public function edit(Post $post) {
+        return view('post.edit', compact('post'));
+    }
+    public function update(StoreRequest $request, Post $post) {
+        $data = $request->validated();
+        $post->update($data);
+        return redirect()->route('post.item', $data['translit']);
+    }
 }

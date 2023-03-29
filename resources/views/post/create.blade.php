@@ -3,7 +3,8 @@
 @section('content')
 @section('title', 'Новый пост')
 <div id="post">
-    <form>
+    <form action="{{ route('post.store') }}" method="post">
+        @csrf
         <div class="field_area">
             <input type="text" name="name" class="field" placeholder="Заголовок">
         </div>

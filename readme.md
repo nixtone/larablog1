@@ -20,3 +20,8 @@ php artisan db:seed // запуск сида
 ```sh
 php artisan make:controller PostController
 ``` 
+
+3. Create
+```sh
+php artisan make:request StoreRequest
+```

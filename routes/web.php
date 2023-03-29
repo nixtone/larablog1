@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::name('post.')->group(function() {
-    Route::get('/', function () { return view('post.list'); })->name('list');
+    Route::get('/', [PostController::class, 'index'])->name('list');
     Route::get('/post/create', function () { return view('post.create'); })->name('create');
-    Route::get('/post/{post}', function () { return view('post.item'); })->name('item');
+    Route::get('/post/{post}', [PostController::class, 'show'])->name('item');
     Route::get('/photos/{post}/edit', function () { return view('post.edit'); })->name('edit');
 });

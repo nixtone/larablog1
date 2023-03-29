@@ -1,0 +1,78 @@
+
+/* Атомарные классы */
+
+.container {
+	box-sizing: border-box;
+	margin:0 auto;
+	max-width: 800px; /* Задать ширину блоков */
+	min-width: 320px;
+}
+
+.field_area {
+	margin-bottom: 15px;
+}
+.field {
+	display: block;
+	padding: 5px 8px 6px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: Arial;
+	font-size: 0.8em;
+}
+.field_area label:not(.inline) {
+	display: block;
+	margin-bottom: 5px;
+}
+
+/* БЭМ */
+
+nav {
+	background: #1a1a1a;
+	padding: 7px 15px 9px;
+}
+nav a {
+	color: #fff;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+#post .item {
+	margin-bottom: 15px;
+	background: #eee;
+	padding: 15px;
+}
+#post .item > * {
+	margin: 15px 0;
+}
+#post .item > *:first-child {
+	margin-top: 0;
+}
+#post .item > *:last-child {
+	margin-bottom: 0;
+}
+#post .title {
+	color: #4586d6;
+	margin: 0 0 15px;
+}
+#post .tag {
+	background: #c6c6c6;
+	text-decoration: none;
+	padding: 1px 5px 4px;
+	display: inline-block;
+	margin-right: 5px;
+}
+#post .history {
+	color: #c6c6c6;
+}
+#post .delete_form {
+	display: inline-block;
+	margin-left: 10px;
+}
+#post .more {
+	display: block;
+	margin-bottom: 0;
+}
+#post .manage {
+	border-top: 1px solid;
+	padding-top: 10px;
+}

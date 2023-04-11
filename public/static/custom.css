@@ -58,10 +58,17 @@ nav a {
     padding: 10px 15px;
     background: #ddd;
 }
+#post .tags {
+    padding: 5px 15px;
+    background: #a7a7a7;
+}
+#post .item .tags {
+    padding: 5px;
+}
 #post .tag {
 	background: #c6c6c6;
 	text-decoration: none;
-	padding: 1px 5px 4px;
+	padding: 1px 5px 2px;
 	display: inline-block;
 	margin-right: 5px;
 }

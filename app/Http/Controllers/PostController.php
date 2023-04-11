@@ -16,7 +16,6 @@ class PostController extends Controller
     }
     public function show($translit) {
         $post = Post::where('translit', $translit)->get()->first();
-        //dd($post->category);
         return view('post.item', compact('post'));
     }
     public function listDeleted() {

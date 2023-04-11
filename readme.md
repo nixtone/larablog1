@@ -31,3 +31,11 @@ php artisan make:request StoreRequest
 ```sh  
 php artisan make:model Category -mf
 ```  
+
+6. Многие ко многим (теги)  
+```sh  
+php artisan make:model Tag -mf  
+```  
+```sh  
+php artisan make:model PostTag -mf  
+```  

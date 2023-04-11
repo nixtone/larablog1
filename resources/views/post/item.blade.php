@@ -4,6 +4,11 @@
 @section('title', $post->name)
 <div id="post">
     <div class="category">Категория: <a href="">{{ $post->category->name }}</a></div>
+    <div class="tags">
+        @foreach($post->tag as $tag)
+        <span class="tag">{{ $tag->name }}</span>
+        @endforeach
+    </div>
     <div class="item">
         <div class="text">{!! $post->text !!}</div>
         <div class="manage">

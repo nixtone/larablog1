@@ -39,3 +39,9 @@ php artisan make:model Tag -mf
 ```sh  
 php artisan make:model PostTag -mf  
 ```  
+
+7. Кастомный helper  
+```sh
+composer dump-autoload  
+```  
+

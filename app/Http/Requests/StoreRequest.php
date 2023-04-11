@@ -26,6 +26,7 @@ class StoreRequest extends FormRequest
             'translit' => 'string',
             'anons' => 'string',
             'text' => 'string',
+            'category_id' => 'integer',
         ];
     }
 }

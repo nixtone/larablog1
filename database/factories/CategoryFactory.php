@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class PostFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,13 +17,10 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-        $name = $this->faker->name(); // title() не годится
+        $name = $this->faker->name();
         return [
             'name' => $name,
             'translit' => Str::slug($name),
-            'anons' => $this->faker->realText(150),
-            'text' => $this->faker->realText(800),
-            'category_id' => $this->faker->numberBetween(1, 5),
         ];
     }
 }

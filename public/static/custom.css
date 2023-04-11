@@ -54,6 +54,10 @@ nav a {
 	color: #4586d6;
 	margin: 0 0 15px;
 }
+#post .category {
+    padding: 10px 15px;
+    background: #ddd;
+}
 #post .tag {
 	background: #c6c6c6;
 	text-decoration: none;
@@ -75,4 +79,10 @@ nav a {
 #post .manage {
 	border-top: 1px solid;
 	padding-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+#post .created_at {
+    color: #6d6d6d;
 }

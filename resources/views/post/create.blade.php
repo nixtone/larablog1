@@ -17,6 +17,15 @@
         <div class="field_area">
             <textarea name="text" class="field" rows="15" placeholder="Текст статьи"></textarea>
         </div>
+
+        <div class="field_area">
+            <label for="categories">Выбери категорию:</label>
+            <select name="category_id" id="categories" class="field">
+                @foreach($arCategories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
         <div class="field_area">
             <input type="submit" value="Создать" class="btn">
         </div>

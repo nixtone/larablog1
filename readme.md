@@ -26,3 +26,8 @@ php artisan make:controller PostController
 ```sh
 php artisan make:request StoreRequest
 ```
+
+5. Один ко многим (категория)  
+```sh  
+php artisan make:model Category -mf
+```  

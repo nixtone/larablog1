@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRequest;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -15,6 +16,7 @@ class PostController extends Controller
     }
     public function show($translit) {
         $post = Post::where('translit', $translit)->get()->first();
+        //dd($post->category);
         return view('post.item', compact('post'));
     }
     public function listDeleted() {
@@ -23,7 +25,8 @@ class PostController extends Controller
     }
 
     public function create() {
-        return view('post.create');
+        $arCategories = Category::all();
+        return view('post.create', compact('arCategories'));
     }
     public function store(StoreRequest $request) {
         $data = $request->validated();

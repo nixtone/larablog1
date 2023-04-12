@@ -13,6 +13,7 @@
         <div class="text">{!! $post->text !!}</div>
         <div class="manage">
             <span class="created_at">Создано: {{ $post->created_at }}</span>
+            @auth
             <div class="btn_area">
                 <a href="{{ route('post.edit', $post->id) }}" class="edit">Редактировать</a>
                 <form action="{{ route('post.delete', $post->id) }}" method="post" class="delete_form">
@@ -21,6 +22,7 @@
                     <input type="submit" value="Удалить">
                 </form>
             </div>
+            @endauth
         </div>
     </div>
 </div>

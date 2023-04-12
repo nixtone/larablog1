@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +13,33 @@ use App\Http\Controllers\PostController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::name('user.')->group(function() {
+    Route::view('/private', 'user.private')->middleware('auth')->name('private');
+
+    Route::get('/login', function() {
+        if(Auth::check()) {
+            return redirect(route('user.private'));
+        }
+        return view('user.login');
+    })->name('login');
+
+    Route::post('/login', [UserController::class, 'login']);
+
+    Route::get('/logout', function() {
+        Auth::logout();
+        return redirect('/');
+    })->name('logout');
+
+    Route::get('/reg', function() {
+        if(Auth::check()) {
+            return redirect(route('user.private'));
+        }
+        return view('user.reg');
+    })->name('reg');
+
+    Route::post('/reg', [UserController::class, 'save']);
+});
 
 Route::name('post.')->group(function() {
     Route::get('/', [PostController::class, 'index'])->name('list');

@@ -8,6 +8,10 @@
 	min-width: 320px;
 }
 
+.form_area {
+    max-width: 320px;
+    margin: 0 auto;
+}
 .field_area {
 	margin-bottom: 15px;
 }
@@ -23,12 +27,27 @@
 	display: block;
 	margin-bottom: 5px;
 }
+input.field[type="submit"] {
+    width: unset;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.form_area .err {
+    color: #ff0000;
+}
+.form_area div.err {
+    margin: 5px 0;
+}
 
 /* БЭМ */
 
 nav {
-	background: #1a1a1a;
-	padding: 7px 15px 9px;
+    background: #1a1a1a;
+    padding: 7px 15px 9px;
+    display: flex;
+    justify-content: space-between;
+    color: #c3e2ff;
 }
 nav a {
 	color: #fff;

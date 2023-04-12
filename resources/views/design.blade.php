@@ -12,9 +12,23 @@
 <div class="container">
 
     <nav>
-        <a href="{{ route('post.list') }}">Главная</a>
-        <a href="{{ route('post.create') }}">Новый пост</a>
-        <a href="{{ route('post.list.deleted') }}">Удаленные</a>
+        <div class="col c1">
+            <a href="{{ route('post.list') }}">Главная</a>
+            @auth
+            <a href="{{ route('post.create') }}">Новый пост</a>
+            <a href="{{ route('post.list.deleted') }}">Удаленные</a>
+            @endauth
+        </div>
+        <div class="col c2">
+            @guest
+            <a href="/login">Auth</a>
+            <a href="/reg">Reg</a>
+            @endguest
+            @auth
+            Вы: <a href="{{ route('user.private') }}">{{ Auth::user()->name }}</a>, <a href="/logout">выйти</a>
+            @endauth
+        </div>
+
     </nav>
 
     <h1>@yield('title')</h1>

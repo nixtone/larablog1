@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreRequest;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\PostTag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -49,6 +50,7 @@ class PostController extends Controller
     }
     public function destroyHard($post) {
         //$post->forceDelete();
+        PostTag::where('post_id', $post)->delete(); // Удаление связанных тегов
         Post::where('id', $post)->forceDelete();
         return redirect()->route('post.list.deleted');
     }

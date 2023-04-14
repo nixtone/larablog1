@@ -22,11 +22,19 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'string',
-            'translit' => 'string',
-            'anons' => 'string',
-            'text' => 'string',
-            'category_id' => 'integer',
+            'name' => 'required',
+            'translit' => 'required',
+            'anons' => 'required',
+            'text' => 'required',
+            'category_id' => 'integer|required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Заполните заголовок бряк',
+            'anons.required' => 'Заполните анонс тоже',
         ];
     }
 }

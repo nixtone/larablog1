@@ -18,10 +18,11 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'test1',
+            'email' => 'test1@test.loc',
+            'password' => 'test1',
+        ]);
         Category::factory(5)->create();
         Tag::factory(5)->create();
         Post::factory(8)->create();

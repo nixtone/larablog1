@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\BaseController;
 use App\Http\Requests\StoreRequest;
 use App\Models\Category;
 use App\Models\Post;
@@ -9,7 +10,7 @@ use App\Models\PostTag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class PostController extends Controller
+class PostController extends BaseController
 {
     public function index() {
         $arPosts = Post::all();
@@ -29,20 +30,29 @@ class PostController extends Controller
         return view('post.create', compact('arCategories'));
     }
     public function store(StoreRequest $request) {
+
         $data = $request->validated();
-        $data['translit'] = Str::slug($data['name']);
-        $createdPost = Post::create($data);
+
+        $createdPost = $this->service->store($data);
+
         return redirect()->route('post.item', $createdPost->translit);
     }
 
     public function edit(Post $post) {
-        return view('post.edit', compact('post'));
+        $categoryList = Category::all();
+        return view('post.edit', compact('post', 'categoryList'));
     }
+
+    /**/
     public function update(StoreRequest $request, Post $post) {
+
+
         $data = $request->validated();
-        $post->update($data);
+        $this->service->update($data, $post);
         return redirect()->route('post.item', $data['translit']);
+
     }
+
 
     public function destroy(Post $post) {
         $post->delete();

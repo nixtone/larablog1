@@ -44,4 +44,4 @@ php artisan make:model PostTag -mf
 ```sh
 composer dump-autoload  
 ```  
-
+"create" и "update" Реализованы через Service

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('translit')->unique();
-            $table->text('anons');
+            $table->text('anons')->nullable();
             $table->text('text');
             $table->foreignId('category_id')->constrained();
             $table->softDeletes();

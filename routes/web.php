@@ -49,6 +49,7 @@ Route::name('post.')->group(function() {
     Route::post('/post', [PostController::class, 'store'])->name('store');
     Route::get('/post/{post}', [PostController::class, 'show'])->name('item');
     Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('edit');
+    // TODO: Не работает update
     Route::patch('/post/{post}/update', [PostController::class, 'update'])->name('update');
     Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('delete');
     Route::get('/delete-hard/{post}', [PostController::class, 'destroyHard'])->name('delete.hard');

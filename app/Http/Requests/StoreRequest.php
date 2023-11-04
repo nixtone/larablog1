@@ -23,9 +23,9 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'translit' => 'required',
-            'anons' => 'required',
+            'translit' => '',
             'text' => 'required',
+            'anons' => '',
             'category_id' => 'integer|required',
         ];
     }

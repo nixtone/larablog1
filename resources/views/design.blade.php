@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="{{ asset('/favicon.png') }}">
     <title>@yield('title', 'Блог')</title>
-    <link rel="stylesheet" href="/public/static/custom.css">
+    <link rel="stylesheet" href="{{ asset('/static/custom.css') }}">
 </head>
 <body>
 

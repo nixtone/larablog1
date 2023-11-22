@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\StoreRequest;
+use App\Jobs\NotifyPostJob;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\PostTag;
@@ -34,6 +35,8 @@ class PostController extends BaseController
         $data = $request->validated();
 
         $createdPost = $this->service->store($data);
+
+        NotifyPostJob::dispatch();
 
         return redirect()->route('post.item', $createdPost->translit);
     }
